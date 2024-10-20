@@ -8,7 +8,7 @@ FROM nginx:latest
 
 # Copy your static website or application files to the default Nginx folder
 # (Assuming you have an HTML or app in the ./html folder)
-## COPY ./html /usr/share/nginx/html
+COPY ./dist /usr/share/nginx/html
 
 # Expose port 80 to the outside world
 EXPOSE 80
