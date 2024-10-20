@@ -42,6 +42,11 @@
             margin-bottom: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .nav-item.selected {
+            background-color: #e0e0e0; /* 选中行的背景色 */
         }
         .nav-title {
             font-weight: bold;
@@ -71,60 +76,63 @@
 </div>
 
 <div class="nav-list">
-    <div class="nav-item">
-        <div class="nav-title"><a href="https://bnps-ui-test-k8s.kscbnps.com/">测试环境Console主页</a></div>
-        <div class="nav-description">内部Console主页。</div>
-    </div>
-
-    <div class="nav-item">
+    <div class="nav-item" onclick="selectItem(this)">
         <div class="nav-title"><a href="https://www.baidu.com">百度</a></div>
         <div class="nav-description">全球最大的中文搜索引擎。</div>
     </div>
-    <div class="nav-item">
+    <div class="nav-item" onclick="selectItem(this)">
         <div class="nav-title"><a href="https://www.google.com">谷歌</a></div>
         <div class="nav-description">世界领先的搜索引擎，支持多语言。</div>
     </div>
-    <div class="nav-item">
+    <div class="nav-item" onclick="selectItem(this)">
         <div class="nav-title"><a href="https://www.taobao.com">淘宝</a></div>
         <div class="nav-description">中国最大的电商平台，购物天堂。</div>
     </div>
-    <div class="nav-item">
+    <div class="nav-item" onclick="selectItem(this)">
         <div class="nav-title"><a href="https://www.jd.com">京东</a></div>
         <div class="nav-description">以快速配送闻名的中国大型电商平台。</div>
     </div>
-    <div class="nav-item">
+    <div class="nav-item" onclick="selectItem(this)">
         <div class="nav-title"><a href="https://www.sina.com.cn">新浪</a></div>
         <div class="nav-description">提供新闻、体育、娱乐等多元化信息。</div>
     </div>
-    <div class="nav-item">
+    <div class="nav-item" onclick="selectItem(this)">
         <div class="nav-title"><a href="https://www.qq.com">腾讯</a></div>
         <div class="nav-description">提供新闻、社交和娱乐内容的大型门户网站。</div>
     </div>
-    <div class="nav-item">
+    <div class="nav-item" onclick="selectItem(this)">
         <div class="nav-title"><a href="https://www.zhihu.com">知乎</a></div>
         <div class="nav-description">中国知名的知识分享社区。</div>
     </div>
-    <div class="nav-item">
+    <div class="nav-item" onclick="selectItem(this)">
         <div class="nav-title"><a href="https://www.weibo.com">微博</a></div>
         <div class="nav-description">类似于Twitter的社交媒体平台。</div>
     </div>
-    <div class="nav-item">
+    <div class="nav-item" onclick="selectItem(this)">
         <div class="nav-title"><a href="https://www.toutiao.com">今日头条</a></div>
         <div class="nav-description">个性化新闻推荐平台，提供最新头条新闻。</div>
     </div>
-    <div class="nav-item">
+    <div class="nav-item" onclick="selectItem(this)">
         <div class="nav-title"><a href="https://www.xiami.com">虾米音乐</a></div>
         <div class="nav-description">提供在线音乐和社交功能的音乐平台。</div>
     </div>
-    <div class="nav-item">
+    <div class="nav-item" onclick="selectItem(this)">
         <div class="nav-title"><a href="https://www.douban.com">豆瓣</a></div>
         <div class="nav-description">以书籍、电影、音乐等文化内容的评分与推荐为主。</div>
     </div>
-    <div class="nav-item">
+    <div class="nav-item" onclick="selectItem(this)">
         <div class="nav-title"><a href="https://www.bilibili.com">哔哩哔哩</a></div>
         <div class="nav-description">中国领先的二次元视频与社区平台。</div>
     </div>
 </div>
+
+<script>
+    function selectItem(item) {
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(navItem => navItem.classList.remove('selected')); // 清除之前的选中状态
+        item.classList.add('selected'); // 添加选中状态
+    }
+</script>
 
 </body>
 </html>
